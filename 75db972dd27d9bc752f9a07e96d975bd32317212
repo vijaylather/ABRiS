@@ -1,0 +1,278 @@
+src/main/scala/org/apache/spark/sql/avro/AbrisSparkColumnHelper.scala
+  human 1-32
+src/main/scala/za/co/absa/abris/avro/functions.scala
+  human 20,39-40,68-69
+src/main/scala/za/co/absa/abris/avro/parsing/utils/AvroSchemaUtils.scala
+  human 25,83-84
+src/test/scala/za/co/absa/abris/avro/parsing/utils/AvroSchemaUtilsSpec.scala
+  human 32-33
+src/test/scala/za/co/absa/abris/avro/sql/CatalystAvroConversionSpec.scala
+  human 40-41,101,356,373,393,410
+.github/workflows/test-and-verify.yml
+  human 5,7,13,16-25,27-30,32
+src/test/scala/za/co/absa/abris/avro/sql/AvroDataToCatalystSpec.scala
+  human 35,48-49,71,89,104,119,133,140
+src/test/scala/za/co/absa/abris/avro/sql/CatalystDataToAvroSpec.scala
+  human 28,40
+README.md
+  human 24-28,30,32,44,52-53,58-59,63-64,68-79,81,288
+src/test/scala/za/co/absa/abris/avro/sql/SchemaEvolutionSpec.scala
+  human 36-37,50,59,129,141
+src/test/scala/za/co/absa/abris/avro/errors/SpecificRecordExceptionHandlerSpec.scala
+  human 35-36
+src/main/scala/za/co/absa/abris/examples/data/generation/TestSchemas.scala
+  human 38,51,68,82,91,100,109,118,127,136,145,154,163,172,183
+.github/workflows/ci-check-jacoco.yml
+  human 5,13,15-27,29
+src/main/scala/org/apache/spark/sql/avro/AbrisAvroDeserializer.scala
+  human 51,55,57-60
+src/test/scala/za/co/absa/abris/avro/errors/PermissiveRecordExceptionHandlerSpec.scala
+  human 33-34
+src/test/scala/za/co/absa/abris/avro/read/confluent/SchemaManagerSpec.scala
+  human 32,41,51
+pom.xml
+  human 61,85,275,394,402,407-419
+---
+{
+  "attestations": [
+    {
+      "entries": [
+        {
+          "accepted_lines": 32,
+          "added_lines": 32,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "1-32",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/main/scala/org/apache/spark/sql/avro/AbrisSparkColumnHelper.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 5,
+          "added_lines": 5,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "20,39-40,68-69",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/main/scala/za/co/absa/abris/avro/functions.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 3,
+          "added_lines": 3,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "25,83-84",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/main/scala/za/co/absa/abris/avro/parsing/utils/AvroSchemaUtils.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 2,
+          "added_lines": 2,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "32-33",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/parsing/utils/AvroSchemaUtilsSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 7,
+          "added_lines": 7,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "40-41,101,356,373,393,410",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/sql/CatalystAvroConversionSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 18,
+          "added_lines": 18,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "5,7,13,16-25,27-30,32",
+          "overridden_lines": 0
+        }
+      ],
+      "file": ".github/workflows/test-and-verify.yml"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 9,
+          "added_lines": 9,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "35,48-49,71,89,104,119,133,140",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/sql/AvroDataToCatalystSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 2,
+          "added_lines": 2,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "28,40",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/sql/CatalystDataToAvroSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 28,
+          "added_lines": 28,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "24-28,30,32,44,52-53,58-59,63-64,68-79,81,288",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "README.md"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 6,
+          "added_lines": 6,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "36-37,50,59,129,141",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/sql/SchemaEvolutionSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 2,
+          "added_lines": 2,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "35-36",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/errors/SpecificRecordExceptionHandlerSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 15,
+          "added_lines": 15,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "38,51,68,82,91,100,109,118,127,136,145,154,163,172,183",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/main/scala/za/co/absa/abris/examples/data/generation/TestSchemas.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 16,
+          "added_lines": 16,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "5,13,15-27,29",
+          "overridden_lines": 0
+        }
+      ],
+      "file": ".github/workflows/ci-check-jacoco.yml"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 6,
+          "added_lines": 6,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "51,55,57-60",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/main/scala/org/apache/spark/sql/avro/AbrisAvroDeserializer.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 2,
+          "added_lines": 2,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "33-34",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/errors/PermissiveRecordExceptionHandlerSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 3,
+          "added_lines": 3,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "32,41,51",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "src/test/scala/za/co/absa/abris/avro/read/confluent/SchemaManagerSpec.scala"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 18,
+          "added_lines": 18,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "61,85,275,394,402,407-419",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "pom.xml"
+    }
+  ],
+  "base_commit_sha": "11c28499b5d5d99fb94df4d084492b6b6405f27f",
+  "branch": "spark-4.0",
+  "commit_sha": "75db972dd27d9bc752f9a07e96d975bd32317212",
+  "commit_time": "2026-05-12T01:44:46+05:30",
+  "commit_type": "direct_commit",
+  "git_ai_version": "1.4.4",
+  "prompts": {
+    "human": {
+      "accepted_lines": 174,
+      "agent_id": null,
+      "human_author": "Vijay Lather <vijay.lather@harness.io>",
+      "overriden_lines": 0,
+      "total_additions": 174,
+      "total_deletions": 0
+    }
+  },
+  "repo": "git@github.com:vijaylather/ABRiS.git",
+  "schema_version": "authorship/3.0.0"
+}
