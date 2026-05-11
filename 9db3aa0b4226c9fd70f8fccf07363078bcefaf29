@@ -1,0 +1,59 @@
+README.md
+  3711bc84-e364-4d5d-9c8b-90acb1e81c4e 24-28,30,32,44,52-53,58-59,63-64,68-74,76-79,81,288
+  human 75
+---
+{
+  "attestations": [
+    {
+      "entries": [
+        {
+          "accepted_lines": 27,
+          "added_lines": 28,
+          "deleted_lines": 33,
+          "hash": "3711bc84-e364-4d5d-9c8b-90acb1e81c4e",
+          "lines": "24-28,30,32,44,52-53,58-59,63-64,68-74,76-79,81,288",
+          "overridden_lines": 0
+        },
+        {
+          "accepted_lines": 1,
+          "added_lines": 1,
+          "deleted_lines": 0,
+          "hash": "human",
+          "lines": "75",
+          "overridden_lines": 0
+        }
+      ],
+      "file": "README.md"
+    }
+  ],
+  "base_commit_sha": "581c37cce8478b048705c50b59040d8ed3e8ad3c",
+  "branch": "spark-4.0",
+  "commit_sha": "9db3aa0b4226c9fd70f8fccf07363078bcefaf29",
+  "commit_time": "2026-05-12T01:34:06+05:30",
+  "commit_type": "direct_commit",
+  "git_ai_version": "1.4.4",
+  "prompts": {
+    "3711bc84-e364-4d5d-9c8b-90acb1e81c4e": {
+      "accepted_lines": 27,
+      "agent_id": {
+        "id": "3711bc84-e364-4d5d-9c8b-90acb1e81c4e",
+        "model": "claude-opus-4-6",
+        "tool": "claude"
+      },
+      "human_author": "Vijay Lather <vijay.lather@harness.io>",
+      "overriden_lines": 0,
+      "total_additions": 28,
+      "total_deletions": 33
+    },
+    "human": {
+      "accepted_lines": 1,
+      "agent_id": null,
+      "human_author": "Vijay Lather <vijay.lather@harness.io>",
+      "overriden_lines": 0,
+      "total_additions": 1,
+      "total_deletions": 0
+    }
+  },
+  "repo": "git@github.com:vijaylather/ABRiS.git",
+  "schema_version": "authorship/3.0.0"
+}
