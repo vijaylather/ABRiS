@@ -1,0 +1,57 @@
+.github/workflows/test-and-verify.yml
+  3711bc84-e364-4d5d-9c8b-90acb1e81c4e 5,7,13,19-25,27-30,32
+.github/workflows/ci-check-jacoco.yml
+  3711bc84-e364-4d5d-9c8b-90acb1e81c4e 5,16-17,19-27,29
+---
+{
+  "attestations": [
+    {
+      "entries": [
+        {
+          "accepted_lines": 15,
+          "added_lines": 15,
+          "deleted_lines": 9,
+          "hash": "3711bc84-e364-4d5d-9c8b-90acb1e81c4e",
+          "lines": "5,7,13,19-25,27-30,32",
+          "overridden_lines": 0
+        }
+      ],
+      "file": ".github/workflows/test-and-verify.yml"
+    },
+    {
+      "entries": [
+        {
+          "accepted_lines": 13,
+          "added_lines": 13,
+          "deleted_lines": 9,
+          "hash": "3711bc84-e364-4d5d-9c8b-90acb1e81c4e",
+          "lines": "5,16-17,19-27,29",
+          "overridden_lines": 0
+        }
+      ],
+      "file": ".github/workflows/ci-check-jacoco.yml"
+    }
+  ],
+  "base_commit_sha": "9db3aa0b4226c9fd70f8fccf07363078bcefaf29",
+  "branch": "spark-4.0",
+  "commit_sha": "293f64e336fe736b7c7ba0b0e9faeb3296965df5",
+  "commit_time": "2026-05-12T01:37:16+05:30",
+  "commit_type": "direct_commit",
+  "git_ai_version": "1.4.4",
+  "prompts": {
+    "3711bc84-e364-4d5d-9c8b-90acb1e81c4e": {
+      "accepted_lines": 28,
+      "agent_id": {
+        "id": "3711bc84-e364-4d5d-9c8b-90acb1e81c4e",
+        "model": "claude-opus-4-6",
+        "tool": "claude"
+      },
+      "human_author": "Vijay Lather <vijay.lather@harness.io>",
+      "overriden_lines": 0,
+      "total_additions": 28,
+      "total_deletions": 18
+    }
+  },
+  "repo": "git@github.com:vijaylather/ABRiS.git",
+  "schema_version": "authorship/3.0.0"
+}
