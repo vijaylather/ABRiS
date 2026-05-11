@@ -17,6 +17,7 @@
 package za.co.absa.abris.avro
 
 import org.apache.spark.sql.Column
+import org.apache.spark.sql.avro.AbrisSparkColumnHelper
 import za.co.absa.abris.avro.sql.{AvroDataToCatalyst, CatalystDataToAvro}
 import za.co.absa.abris.config.{AbrisConfig, FromAvroConfig, ToAvroConfig}
 
@@ -35,8 +36,8 @@ object functions {
   def to_avro(column: Column, config: ToAvroConfig): Column = {
     config.validate()
 
-    new Column(CatalystDataToAvro(
-      column.expr,
+    AbrisSparkColumnHelper.exprToColumn(CatalystDataToAvro(
+      AbrisSparkColumnHelper.columnToExpr(column),
       config.abrisConfig()
     ))
   }
@@ -64,8 +65,8 @@ object functions {
   def from_avro(column: Column, config: FromAvroConfig): Column = {
     config.validate()
 
-    new Column(AvroDataToCatalyst(
-      column.expr,
+    AbrisSparkColumnHelper.exprToColumn(AvroDataToCatalyst(
+      AbrisSparkColumnHelper.columnToExpr(column),
       config.abrisConfig(),
       config.schemaRegistryConf()
     ))

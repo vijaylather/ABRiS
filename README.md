@@ -17,28 +17,19 @@
 
 | Scala  | Abris   |
 |:------:|:-------:|
-| 2.11   | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.11) |
-| 2.12   | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.12) |
 | 2.13   | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/za.co.absa/abris_2.13) |
 
 ## Supported versions
 
-| Abris   |     Spark     | Scala       |
-|:-----:  |:-------------:|:-----:      |
-| 6.2.0 - 6.x.x   | 3.2.1 - 3.5.x | 2.12 / 2.13 |
-| 6.0.0 - 6.1.1   |     3.2.0     | 2.12 / 2.13 |
-| 5.0.0 - 5.x.x   | 3.0.x / 3.1.x | 2.12        |
-| 5.0.0 - 5.x.x   |     2.4.x     | 2.11 / 2.12 |
+| Abris   |     Spark     | Scala | Java |
+|:-----:  |:-------------:|:-----:|:----:|
+| 6.4.x (spark-4.0 branch) | 4.0.x | 2.13 | 17+ |
+| 6.2.0 - 6.x.x   | 3.2.1 - 3.5.x | 2.12 / 2.13 | 8+ |
+| 6.0.0 - 6.1.1   |     3.2.0     | 2.12 / 2.13 | 8+ |
 
-From version 6.0.0, ABRiS only supports Spark 3.2.x.
+This branch (`spark-4.0`) requires **Java 17+**, **Scala 2.13**, and **Apache Spark 4.0**.
 
-ABRiS 5.0.x is still supported for older versions of Spark (see [branch-5](https://github.com/AbsaOSS/ABRiS/tree/branch-5))
-
-## Older Versions
-This is documentation for Abris **version 6**. Documentation for older versions is located in corresponding branches:
-[branch-5](https://github.com/AbsaOSS/ABRiS/tree/branch-5),
-[branch-4](https://github.com/AbsaOSS/ABRiS/tree/branch-4),
-[branch-3.2](https://github.com/AbsaOSS/ABRiS/tree/branch-3.2).
+For Spark 3.x support, use the [master](https://github.com/Traceableai/ABRis/tree/master) branch.
 
 ## Confluent Schema Registry Version
 Abris by default uses Confluent client version 6.2.0.
@@ -50,7 +41,7 @@ The version of `spark-avro` and `Spark` should be identical.
 Example: submitting a Spark job:
 ```
 ./bin/spark-submit \
-    --packages org.apache.spark:spark-avro_2.12:3.5.0,za.co.absa:abris_2.12:6.4.0 \
+    --packages org.apache.spark:spark-avro_2.13:4.0.0,za.co.absa:abris_2.13:6.4.1 \
     ...rest of submit params...
 ```
 
@@ -58,30 +49,36 @@ Example: using Abris in maven project:
 ```xml
 <dependency>
     <groupId>org.apache.spark</groupId>
-    <artifactId>spark-core_2.12</artifactId>
-    <version>3.5.0</version>
+    <artifactId>spark-core_2.13</artifactId>
+    <version>4.0.0</version>
     <scope>provided</scope>
 </dependency>
 <dependency>
     <groupId>org.apache.spark</groupId>
-    <artifactId>spark-avro_2.12</artifactId>
-    <version>3.5.0</version> <!-- version must be the same as Spark -->
+    <artifactId>spark-avro_2.13</artifactId>
+    <version>4.0.0</version> <!-- version must be the same as Spark -->
 </dependency>
 <dependency>
     <groupId>za.co.absa</groupId>
-    <artifactId>abris_2.12</artifactId>
-    <version>6.4.0</version>
+    <artifactId>abris_2.13</artifactId>
+    <version>6.4.1</version>
 </dependency>
 ```
 
-Example: using Abris in SBT project:
-```Scala
-libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % "3.5.0" % Provided,
-  "org.apache.spark" %% "spark-avro" % "3.5.0",
-  "za.co.absa" %% "abris" % "6.4.0"
-)
+Example: using Abris in Gradle project:
+```groovy
+dependencies {
+    compileOnly 'org.apache.spark:spark-core_2.13:4.0.0'
+    implementation 'org.apache.spark:spark-avro_2.13:4.0.0'
+    implementation 'za.co.absa:abris_2.13:6.4.1'
+}
 ```
+
+### Building from source
+```bash
+mvn clean install -Pspark-4.0,scala-2.13 -DskipTests
+```
+Requires Java 17+.
 
 
 ## Usage
@@ -286,16 +283,6 @@ because all rows in dataframe must have the same schema.
 So if you have multiple incompatible types of avro data in a dataframe you must first sort them out to several dataframes.
 One for each schema. Then you can use Abris and convert the avro data.
 
-## How to measure code coverage
-```shell
-./mvn clean verify -Pcode-coverage,scala-2.12
-or
-./mvn clean verify -Pcode-coverage,scala-2.13
-```
-Code coverage reports will be generated on paths:
-```
-{local-path}\ABRiS\target\jacoco
-```
 
 ---
 

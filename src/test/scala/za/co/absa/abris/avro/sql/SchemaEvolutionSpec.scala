@@ -33,7 +33,8 @@ class SchemaEvolutionSpec extends AnyFlatSpec with Matchers with BeforeAndAfterE
     .builder()
     .appName("unitTest")
     .master("local[2]")
-    .config("spark.driver.bindAddress", "localhost")
+    .config("spark.driver.bindAddress", "127.0.0.1")
+    .config("spark.driver.host", "127.0.0.1")
     .config("spark.ui.enabled", "false")
     .getOrCreate()
 
@@ -46,7 +47,7 @@ class SchemaEvolutionSpec extends AnyFlatSpec with Matchers with BeforeAndAfterE
   }
 
   val recordByteSchema = """{
-     "namespace": "all-types.test",
+     "namespace": "all_types.test",
      "type": "record",
      "name": "record_name",
      "fields":[
@@ -55,7 +56,7 @@ class SchemaEvolutionSpec extends AnyFlatSpec with Matchers with BeforeAndAfterE
   }"""
 
   val recordEvolvedByteSchema = """{
-     "namespace": "all-types.test",
+     "namespace": "all_types.test",
      "type": "record",
      "name": "record_name",
      "fields":[
@@ -125,7 +126,7 @@ class SchemaEvolutionSpec extends AnyFlatSpec with Matchers with BeforeAndAfterE
     val subject = SchemaSubject.usingTopicRecordNameStrategy(
       "test_topic",
       "record_name",
-      "all-types.test"
+      "all_types.test"
     )
 
     schemaManager.register(subject, recordEvolvedByteSchema)
@@ -137,7 +138,7 @@ class SchemaEvolutionSpec extends AnyFlatSpec with Matchers with BeforeAndAfterE
     val fromCAConfig = AbrisConfig
       .fromConfluentAvro
       .downloadReaderSchemaByLatestVersion
-      .andTopicRecordNameStrategy("test_topic", "record_name", "all-types.test")
+      .andTopicRecordNameStrategy("test_topic", "record_name", "all_types.test")
       .usingSchemaRegistry(dummyUrl)
 
     val result = outputAvro.select(from_avro(col("avroBytes"), fromCAConfig) as "integersWithDefault")

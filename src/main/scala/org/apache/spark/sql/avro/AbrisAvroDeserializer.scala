@@ -48,12 +48,16 @@ class AbrisAvroDeserializer(rootAvroType: Schema, rootCatalystType: DataType) {
         currCtor.newInstance(rootAvroType, rootCatalystType, "LEGACY")
       case currCtor if currCtor.getParameterTypes sameElements
         Array(schemaClz, dataTypeClz, stringClz, booleanClz) =>
-        // Spark 3.5.1 - 3.5.2
+        // Spark 3.5.1 - 3.5.6
         currCtor.newInstance(rootAvroType, rootCatalystType, "LEGACY", false: java.lang.Boolean)
       case currCtor if currCtor.getParameterTypes.toSeq sameElements
         Array(schemaClz, dataTypeClz, stringClz, booleanClz, stringClz) =>
-        // Spark 4.0.0-SNAPSHOT+
+        // Spark 4.0.0-preview (5-param)
         currCtor.newInstance(rootAvroType, rootCatalystType, "LEGACY", false: java.lang.Boolean, "")
+      case currCtor if currCtor.getParameterTypes.toSeq sameElements
+        Array(schemaClz, dataTypeClz, stringClz, booleanClz, stringClz, Integer.TYPE) =>
+        // Spark 4.0.0 final (6-param with recursiveFieldMaxDepth)
+        currCtor.newInstance(rootAvroType, rootCatalystType, "LEGACY", false: java.lang.Boolean, "", -1: java.lang.Integer)
     } match {
       case Some(value: AvroDeserializer) =>
         value
